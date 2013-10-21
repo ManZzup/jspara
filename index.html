@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>JsPara by ManZzup</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>JsPara</h1>
+        <h2>JsPara is a simple and efficient JavaScript class for extracting GET parameters from a URL query string</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/ManZzup/jspara/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/ManZzup/jspara/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/ManZzup/jspara" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="jspara--a-javascript-url-parser" class="anchor" href="#jspara--a-javascript-url-parser"><span class="octicon octicon-link"></span></a>JsPara : A JavaScript URL parser</h1>
+
+<p>JsPara is a simple and efficient JavaScript class for extracting GET parameters from a URL query string
+Support extracting parameters from both usual string and hash string ( i.e. AJAX based URL  )</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>USAGE</h2>
+
+<p>1) Initialize the JsPara object with the window URI</p>
+
+<pre><code> jp = new JsPara(window.location);
+ //ex: http://example.com/index.html?search=keyword&amp;nothing&amp;page=1#p=new
+</code></pre>
+
+<p>2) Getting all parameters extracted</p>
+
+<pre><code> var paras = jp.params;
+ //output: search, page, p, nothing
+</code></pre>
+
+<p>3) Getting value of a parameter</p>
+
+<pre><code> var search = jp.param['search']
+ //output: keyword
+</code></pre>
+
+<p>4) Getting various other info about url</p>
+
+<pre><code> var hostname = jp.hostname; // example.com
+ var protocol = jp.protocol; // http
+ var path = jp.path; // example.com/index.html
+</code></pre>
+
+<h2>
+<a name="some-valid-parameter-names" class="anchor" href="#some-valid-parameter-names"><span class="octicon octicon-link"></span></a>Some valid parameter names</h2>
+
+<pre><code>test
+test123
+test_me
+test me
+test.me
+"search"
+[1,"abc",'def']
+</code></pre>
+
+<p><strong>&amp; and # are not allowed [you dont say :D]</strong></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
