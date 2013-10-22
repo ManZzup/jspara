@@ -26,9 +26,9 @@ function JsPara(url){
 	//get the parameter part
 	//var para_str = this.url.substr(this.url.indexOf("?")+1);
 	
-	var para_str = decodeURIComponent(url.search.substr(1));
+	var para_str = decodeURIComponent(url.search.substr(1)).replace( /\+/g, ' ' );
 	
-	var para_hash = decodeURIComponent(url.hash.substr(1));
+	var para_hash = decodeURIComponent(url.hash.substr(1)).replace( /\+/g, ' ' );
 	
 	var matches;
 		
