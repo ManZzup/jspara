@@ -30,7 +30,7 @@ function JsPara(url){
 	
 	var para_hash = decodeURIComponent(url.hash.substr(1)).replace( /\+/g, ' ' );
 	
-	var matches;
+	var matches = [];
 		
 	//find for perfect type one i.e para = value
 	if(para_str != ""){
