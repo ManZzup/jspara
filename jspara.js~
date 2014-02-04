@@ -34,10 +34,10 @@ function JsPara(url){
 		
 	//find for perfect type one i.e para = value
 	if(para_str != ""){
-		matches = para_str.match(/[A-z0-9_ .,\'\"\-]+=[A-z0-9_ .,\'\"\-]+/g);	
+		matches = para_str.match(/[A-z0-9_ .,\'\"]+=[A-z0-9_ .,\'\"]+/g);	
 	}
 	if(para_hash != ""){
-		matches = matches.concat(para_hash.match(/[A-z0-9_ .,\'\"\-]+=[A-z0-9_ .,\'\"\-]+/g));
+		matches = matches.concat(para_hash.match(/[A-z0-9_ .,\'\"]+=[A-z0-9_ .,\'\"]+/g));
 	}
 
 	
@@ -57,13 +57,10 @@ function JsPara(url){
 	
 	//match for null parameters
 	if(para_str != ""){
-		matches = para_str.match(/&[A-z0-9. _,\'\"\-]+/g);
+		matches = para_str.match(/&[A-z0-9. _,\'\"]+/g);
 	}
-        if(matches == null){
-            matches = [];
-        }
 	if(para_hash != ""){
-		matches = matches.concat(para_hash.match(/&[A-z0-9. _,\'\"\-]+/g));	
+		matches = matches.concat(para_hash.match(/&[A-z0-9. _,\'\"]+/g));	
 	}
 	
 	//assing null value to those
@@ -78,16 +75,4 @@ function JsPara(url){
 			}
 		}	
 	}	
-}
-
-//function to build array from the query parameter string
-JsPara.prototype.getAsArray = function(pname){
-	var ary_s = this.param[pname];
-	ary_s = ary_s.substr(1,ary_s.length-2);	
-	var elems = ary_s.split(",");	
-	var ary = [];	
-	for(var i=0;i<elems.length;i++){
-		ary.push(elems[i]);
-	}	
-	return ary;
 }
